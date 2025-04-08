@@ -9,6 +9,38 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Reveal Animation */
+.reveal {
+    position: relative;
+    opacity: 0;
+    transform: translateY(150px);
+    transition: all 1s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.reveal-title {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+}
+
+.reveal-title.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Ensure containers don't hide overflow during reveal */
+.contenedor.sobre-nosotros,
+.portafolio,
+.clientes,
+.sobre-savy {
+    overflow: hidden;
+}
+
 header {
     background-color:#5F5F5F;
     display: flex;
@@ -200,6 +232,7 @@ nav ul li a {
         transform: translateX(0);
     }
 }
+
 h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
@@ -243,8 +276,6 @@ a.button:hover {
     flex: 1;
     padding-right: 20px;
 }
-
-
 
 .intro-image img {
     max-width: 100%;
@@ -292,6 +323,7 @@ a.button:hover {
 .menu-desktop li a {
     font-size: 20px; 
 }
+
 /* Sección del equipo */
 .team-section {
     padding: 40px 20px;
@@ -307,26 +339,26 @@ a.button:hover {
 .team-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Centrar los miembros */
+    justify-content: center;
 }
 
 .team-member {
-    flex-basis: calc(40% - 20px); /* Ajustado para que sean menos anchos */
+    flex-basis: calc(40% - 20px);
     background-color: #f4f4f4;
-    margin: 10px; /* Agregar margen para separarlos */
+    margin: 10px;
     border-radius: 8px;
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    height: 350px; /* Mantiene altura fija para un aspecto cuadrado */
+    height: 350px;
 }
 
 .team-member img {
     width: 100%; 
-    max-width: 150px; /* Ancho de la imagen */
-    height: 150px; /* Altura de la imagen */
-    border-radius: 12px; /* Esquinas redondeadas */
+    max-width: 150px;
+    height: 150px;
+    border-radius: 12px;
     margin-bottom: 20px;
 }
 
@@ -363,11 +395,10 @@ a.button:hover {
     transform: translateY(-10px);
 }
 
-/* Responsividad */
 @media (max-width: 768px) {
     .team-member {
-        flex-basis: 100%; /* Ocupa el 100% en dispositivos más pequeños */
-        height: auto; /* Permite que la altura sea automática */
+        flex-basis: 100%;
+        height: auto;
     }
 
     .team-section h2 {
